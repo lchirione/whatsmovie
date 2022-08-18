@@ -1,0 +1,69 @@
+@use "../variables" as *;
+@use "../breakpoint" as *;
+
+.navbar__container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $txt-color !important;
+  z-index: 9;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+}
+
+.navbar__title {
+  color: $txt-color;
+  font-weight: bold;
+  font-size: 1.6rem;
+
+  i {
+    margin: 0 0.5rem;
+    color: $main-color;
+  }
+}
+
+.navbar__links {
+  a {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+@include mobile {
+  .navbar__links {
+    a {
+      i {
+        font-size: 2rem;
+        margin-right: 0px;
+      }
+    }
+    span {
+      display: none;
+    }
+  }
+}
+
+@include tablet {
+  .navbar__title {
+    font-size: 2rem;
+  }
+  .navbar__links {
+    a {
+      font-size: 2rem;
+      /* i {
+        font-size: 2rem;
+        margin-right: 0px;
+      } */
+    }
+  }
+}

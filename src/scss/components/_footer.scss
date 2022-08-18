@@ -1,0 +1,25 @@
+.footer__container {
+  position: relative;
+}
+
+.footer__footer {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  padding: 1rem;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  z-index: 1;
+}
+
+.footer__footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}

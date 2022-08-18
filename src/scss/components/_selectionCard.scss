@@ -1,0 +1,293 @@
+@use "../variables" as *;
+@use "../breakpoint" as *;
+
+.selectionCard__hero {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.6);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+
+  .selectionCard__hero-info {
+    width: 40%;
+    padding: 1rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      font-size: 1.7rem;
+      text-align: right;
+      font-style: italic;
+      font-weight: 300;
+    }
+  }
+
+  .selectionCard__hero-info-genres {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+    margin-top: 0.5rem;
+    span {
+      display: inline;
+      padding: 0.4rem 0.8rem;
+      margin: 0.4rem;
+      font-weight: 600;
+      background-color: $main-color;
+      border-radius: 15px;
+    }
+  }
+
+  .selectionCard__hero-card {
+    img {
+      border-radius: 20px;
+    }
+  }
+}
+
+.SelectionCard__container {
+  padding: 1rem;
+
+  h2 {
+    font-size: 2rem;
+    display: block;
+    padding: 1rem;
+  }
+}
+
+.SelectionCard__production-companies {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .production-companies {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $txt-color;
+
+    min-width: 150px;
+    width: 30%;
+    max-width: 200px;
+    min-height: 150px;
+    max-height: 150px;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    img {
+      width: 80%;
+      max-width: 120px;
+      max-height: 120px;
+    }
+  }
+}
+
+.SelectionCard__container-actors {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+
+  justify-content: start;
+  overflow-x: scroll;
+  margin-bottom: 1rem;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-button:increment,
+  .contenedor::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 9px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(178, 172, 172);
+    border-radius: 20px;
+    border: 1px solid $body-bg;
+  }
+}
+
+.SelectionCard__actors {
+  margin: 0.3rem;
+  display: block;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  height: 280px;
+  padding-left: 0.3rem;
+
+  .card-title,
+  .card-character {
+    font-size: 0.9rem;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.SelectionCard__actors-img {
+  width: 150px !important;
+  height: 200px !important;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  }
+}
+
+.SelectionCard__iframe {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  padding-top: 30px; /* IE6 workaround*/
+  height: 0;
+  overflow: hidden;
+}
+
+.SelectionCard__iframe iframe,
+.SelectionCard__iframe object,
+.SelectionCard__iframe embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+}
+
+@include mobile {
+  .selectionCard__hero {
+    .selectionCard__hero-info {
+      width: 80%;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      .selectionCard__hero-info-genres {
+        span {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .selectionCard__hero-card {
+      display: none;
+    }
+  }
+}
+
+@include tablet {
+  .selectionCard__hero {
+    display: flex;
+    flex-direction: column;
+
+    .selectionCard__hero-info {
+      width: 90%;
+      h2 {
+        font-size: 2.3rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      .selectionCard__hero-info-genres {
+        span {
+          font-size: 1.8rem;
+          padding: 1rem 1.8rem;
+          border-radius: 30px;
+        }
+      }
+    }
+
+    .selectionCard__hero-card {
+      img {
+        width: 400px;
+      }
+    }
+  }
+
+  .SelectionCard__container {
+    padding: 1rem;
+
+    h2 {
+      font-size: 2.5rem;
+      display: block;
+      padding: 1rem;
+    }
+
+    .SelectionCard__production-companies {
+      .production-companies {
+      }
+    }
+  }
+
+  .SelectionCard__container-actors {
+    .SelectionCard__actors {
+      height: 400px;
+
+      .SelectionCard__actors-img {
+        width: 250px !important;
+        height: 300px !important;
+      }
+
+      .card-title {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

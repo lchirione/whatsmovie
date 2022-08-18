@@ -1,0 +1,23 @@
+@use "../variables" as *;
+
+.btn-more {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  background: $main-color;
+  border: 0;
+  outline: 0;
+  color: $txt-color;
+  box-shadow: 0 0 0px $main-color;
+  transition: box-shadow 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 0 15px $main-color;
+  }
+}

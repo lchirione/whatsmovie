@@ -1,0 +1,43 @@
+@use "./variables" as *;
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 550px) and (min-height: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet-horizontal {
+  @media screen and (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin laptop-middle {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop-big {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
